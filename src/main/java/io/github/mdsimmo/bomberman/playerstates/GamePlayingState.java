@@ -324,7 +324,7 @@ public class GamePlayingState extends PlayerState implements Listener {
         if ( immunity > 0 )
             return;
         if ( player.getHealth() > 1 )
-            player.damage( 1 );
+            player.setHealth(player.getHealth()-1);
         else
             dead = true;
         new Immunity();
