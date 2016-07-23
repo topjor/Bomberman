@@ -222,10 +222,13 @@ command:
     # Shown when the arena exceeds the max build size
     # {maxstructuresize}: the maximum amount of blocks that can be in an arena
     # {arena}: the name of the arena attempted to be constructed (not a valid arena)
-    too-big: Max build size exceeded! {maxstructuresize} blocks maximum. Creation cancelled
-    # Shown when the arena is only one block
+    too-big: '{red|Max build size exceeded!} {maxstructuresize} blocks maximum'
+    # Warning shown when the arena is only one block
     # {arena}: the arena created
-    very-small: Structure is only a single block! Were you looking at a natural block?
+    very-small: '{yellow|Structure is only a single block!} Were you looking at a natural block?'
+    # Warning shown when the arena has no spawn points (probably because no wool)
+    # {arena}: the arena created
+    no-spawns: '{yellow|Arena has no spawn points} (use wool on the floor to mark them)'
     # Shown when the arena being created tries to override an arena that is in use by a game
     # {game}: a game that is using the arena's name
     # {arena}: the arena that the game used

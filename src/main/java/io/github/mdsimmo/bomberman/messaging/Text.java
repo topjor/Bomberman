@@ -124,6 +124,7 @@ public enum Text implements Phrase {
 	ARENA_CREATE_TOO_BIG ( "command.arenacreate.too-big" ),
 	ARENA_CREATE_VERY_SMALL ( "command.arenacreate.very-small" ),
 	ARENA_CREATE_IN_USE ( "command.arenacreate.in-use" ),
+	ARENA_CREATE_NO_SPAWNS ("command.arenacreate.no-spawns"),
 
 	DELETE_NAME ( "command.arenadelete.name" ),
 	DELETE_DESCRIPTION ( "command.arenadelete.description" ),

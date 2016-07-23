@@ -92,6 +92,9 @@ public class Create extends Cmd {
 				Chat.sendMessage( getMessage( Text.ARENA_CREATE_VERY_SMALL,
 						sender ).put( "arena", board ) );
 			}
+			if (board.spawnPoints.size() == 0) {
+				Chat.sendMessage(getMessage(Text.ARENA_CREATE_NO_SPAWNS, sender).put("arena", board));
+			}
 			ArenaGenerator.saveBoard( board );
 			Chat.sendMessage( getMessage( Text.ARENA_CREATED, sender ).put(
 					"arena", board ) );

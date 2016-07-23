@@ -65,10 +65,12 @@ public class Join extends GameCommand {
 			}
 		if ( !rep.switchStates( new GamePlayingState( rep, team ) ) ) {
 			PlayerState state = rep.getState();
-			Game activeGame = state.getGame();
-			Message message = Text.PLAYER_BUSY.getMessage( rep );
-			message.put( "game", activeGame );
-			Chat.sendMessage( message );
+			if (state != null) {
+				Game activeGame = state.getGame();
+				Message message = Text.PLAYER_BUSY.getMessage(rep);
+				message.put("game", activeGame);
+				Chat.sendMessage(message);
+			}
 			return true;
 		}
 		rep.setActiveGame( game );
