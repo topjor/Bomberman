@@ -57,7 +57,7 @@ public class Board implements Formattable {
 		}
 		if ( block.getMaterial() == Material.WOOL ) {
 			@SuppressWarnings( "deprecation" )
-			DyeColor color = DyeColor.getByData( block.getData() );
+			DyeColor color = DyeColor.getByDyeData( block.getData() );
 			List<Vector> list = spawnPoints.get( color );
 			if ( list == null )
 				spawnPoints.put( color, list = new ArrayList<Vector>() );

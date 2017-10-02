@@ -13,13 +13,12 @@ import io.github.mdsimmo.bomberman.messaging.Text;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.bukkit.DyeColor;
-import org.bukkit.GameMode;
-import org.bukkit.Location;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Sheep;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
@@ -138,7 +137,7 @@ public class GamePlayingState extends PlayerState implements Listener {
                         continue;
                     cageBlocks.put( temp.clone(), BlockRep.createBlock( b ) );
                     b.setType( Material.STAINED_GLASS );
-                    b.setData( DyeColor.WHITE.getData() );
+                    b.setData( DyeColor.WHITE.getDyeData() );
                 }
             }
         }
@@ -324,7 +323,7 @@ public class GamePlayingState extends PlayerState implements Listener {
         if ( immunity > 0 )
             return;
         if ( player.getHealth() > 1 )
-            player.damage( 1 );
+            player.setHealth(player.getHealth() - 1d);
         else
             dead = true;
         new Immunity();
